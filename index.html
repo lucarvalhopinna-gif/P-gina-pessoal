@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eduardo Carvalho da Silva — Desenvolvedor Front-end</title>
+  <meta name="description" content="Página pessoal de Eduardo Carvalho da Silva — Desenvolvedor Front-end com 5 anos de experiência em JavaScript, HTML5, CSS3 e React.js." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container" id="root">
+    <aside class="sidebar" aria-label="Perfil de Eduardo Carvalho da Silva">
+      <div class="avatar" id="avatar" aria-hidden="true">EC</div>
+      <h1 class="name">Eduardo Carvalho da Silva</h1>
+      <p class="role">Desenvolvedor Front-end</p>
+
+      <ul class="meta">
+        <li class="pill">Brasil</li>
+        <li class="pill"><a href="mailto:dudu.carvalho.pinna@gmail.com">dudu.carvalho.pinna@gmail.com</a></li>
+      </ul>
+
+      <nav class="links" aria-label="Redes sociais">
+        <a href="https://github.com/lucarvalhopinna-gif" target="_blank" rel="noopener" class="social">GitHub</a>
+        <a href="https://linkedin.com/in/eduardocs" target="_blank" rel="noopener" class="social">LinkedIn</a>
+      </nav>
+
+      <button class="btn" id="contactBtn">Contatar</button>
+    </aside>
+
+    <main class="content">
+      <header class="headerCard">
+        <div>
+          <h2>Apresentação</h2>
+          <p class="muted">Especialista em interfaces acessíveis, responsivas e performáticas.</p>
+        </div>
+
+        <div class="controls">
+          <button class="toggle" id="themeToggle">Tema: automático</button>
+          <button class="btn" id="toSkills">Ver conhecimentos</button>
+        </div>
+      </header>
+
+      <section class="intro">
+        <p>
+          Olá — sou <strong>Eduardo Carvalho da Silva</strong>, desenvolvedor front-end com 5 anos de experiência em 
+          <strong>JavaScript</strong>, <strong>HTML5</strong>, <strong>CSS3</strong> e <strong>React.js</strong>. 
+          Crio aplicações modernas e escaláveis, focadas em experiência do usuário e boas práticas de código.
+        </p>
+      </section>
+
+      <section id="skills" class="skills" aria-label="Conhecimentos e competências">
+        
+      </section>
+
+      <section id="contactSection" class="contact hidden" aria-label="Contato">
+        <h2>Contato</h2>
+        <p><strong>Telefone:</strong> (21) 984776809</p>
+        <p><strong>Email:</strong> <a href="mailto:dudu.carvalho.pinna@gmail.com">dudu.carvalho.pinna@gmail.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/lucarvalhopinna-gif" target="_blank">github.com/lucarvalhopinna-gif</a></p>
+        <button class="btn closeContact">Fechar</button>
+      </section>
+
+      <footer class="footerNote">
+        <p>Dica: clique em “Ver detalhes” para expandir as descrições. As barras de competência são animadas.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
