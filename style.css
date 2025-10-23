@@ -1,0 +1,180 @@
+:root {
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --text: #0f1724;
+  --muted: #556376;
+  --accent: #0ea5a4;
+  --shadow: 0 8px 24px rgba(16,24,40,0.06);
+  --transition: 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg, #eef4fa 0%, var(--bg) 100%);
+  color: var(--text);
+  padding: 28px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.sidebar {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 28px;
+  height: fit-content;
+}
+
+.avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), #7dd3fc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.name { font-size: 18px; margin: 0 }
+.role { color: var(--muted); font-size: 13px; margin: 6px 0 12px }
+
+.meta { display: flex; gap: 8px; flex-wrap: wrap; padding: 0; list-style: none; }
+.pill { background: rgba(0,0,0,0.04); padding: 6px 10px; border-radius: 999px; color: var(--muted); font-size: 13px }
+
+.content { display: flex; flex-direction: column; gap: 16px }
+.headerCard {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls { display: flex; gap: 8px; align-items: center }
+.btn {
+  background: var(--accent);
+  border: 0;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
+}
+.btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.toggle {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: var(--transition);
+}
+.toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+@media (max-width:880px) {
+  .container { grid-template-columns: 1fr }
+  .skills { grid-template-columns: 1fr }
+  .sidebar { position: static }
+}
+
+.skill {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+.details.open {
+  max-height: 500px; /* espaço suficiente */
+  opacity: 1;
+}
+
+.progressWrap {
+  width: 100%;
+  height: 10px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #7dd3fc);
+  border-radius: 999px;
+  transition: width 1s cubic-bezier(.2,.9,.3,1);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a:hover {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.contact {
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  border-radius: 12px;
+  animation: fadeIn 0.4s ease;
+}
+
+.contact-section {
+  display: none;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 24px;
+  animation: fadeIn 0.5s ease;
+}
+
+.hidden { display: none; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body.theme-dark {
+  --bg: #071428;
+  --card: #0b1e2a;
+  --text: #e6f0f6;
+  --muted: #8fa9bd;
+  --accent: #22c1c3;
+  background: linear-gradient(180deg, #041021 0%, #071428 100%);
+}
